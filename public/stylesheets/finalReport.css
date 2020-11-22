@@ -1,0 +1,77 @@
+#finalReport{position: absolute;
+display:block;
+top:2%;
+left:25%;
+width:675px;
+height:600px;
+padding:0 5%;
+background-color: steelblue;
+border-radius: 15px;
+z-index:3;
+box-shadow:0 0 8px #3e3b3b96;
+transition:.5s;
+}
+#reportTitle{font-size: 30px;
+font-weight: 700;
+font-family: 'Montserrat';
+margin-top: 10px;
+text-align: center;}
+
+
+#finalGraphBackgroundDiv{background-color: whitesmoke;
+border-radius:15px;
+padding-top:5px;
+margin-top:10px;
+box-shadow: 0 0 10px #00000070;
+}
+#finalGraph{position:static;
+display:block;
+margin: 0 auto;
+height:250px;
+width:500px;
+}
+#tablesDiv{margin-top:20px;}
+
+table{font-family:'Montserrat';
+font-size:17px;
+font-weight:500;
+margin-top:2%;
+background-color: whitesmoke;
+border-radius: 15px;
+box-shadow:0 0 10px #00000070;
+}
+#ratesTable{float:right;}
+#accuracyTable{float:left;}
+td{padding:10px 10px}
+
+.outlined{border-top:3px solid #8080807a;
+    border-bottom:3px solid #8080807a;
+}
+#goHomeButton{position:relative;
+width: 13%;
+height:12%;
+background-color: orange;
+border-color: orange;
+border-radius:15px;
+margin-top:15px;
+}
+#goHomeSVG{position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 60%;
+    margin: 13px;
+}
+#replayButton{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 13%;
+    height:12%;
+    background-color: #1bbd1c;
+    border-color: #1bbd1c;
+    border-radius:15px;
+    margin: 15px 15px 0 380px;
+}
+.fa{font-size:40px}
+

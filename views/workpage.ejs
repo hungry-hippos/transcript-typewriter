@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>WholeSomeTypeWriter</title>
+	<%- include('partials/sidebar.ejs') %>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+	<link rel='stylesheet' href='/stylesheets/workpage.css'>
+	<link rel='stylesheet' href='/stylesheets/timers.css'>
+	<link rel='stylesheet' href='/stylesheets/setTimer.css'>
+	<link rel='stylesheet' href='/stylesheets/finalReport.css'>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+
+  
+  <body>
+
+
+	<div id='timerBtnsDiv' class='container'>
+		<div id='header'>
+			<div id='headerText'>Set a Timer</div>
+			<div id='headerIcon'><i class="material-icons" style="font-size:36px">timer</i></div>
+		</div>
+		<div id='buttons' class='container'>
+			<button type="button" class="btn btn-primary btn-lg" onclick='prepTimers(60)' id='1minButton'>1 min</button>
+			<button type="button" class="btn btn-primary btn-lg" onclick='prepTimers(180)' id='3minButton'>3 min</button>
+			<button type="button" class="btn btn-primary btn-lg" onclick='prepTimers(300)' id='5minButton'>5 min</button>
+			<button type="button" class="btn btn-primary btn-lg" onclick='prepTimers(600)' id='10minButton'>10 min</button>
+			<button type="button" class="btn btn-primary btn-lg" onclick='prepTimers(0)' id='noTimer'>No Timer</button>
+		</div>
+	</div> 
+	
+	<div id='fadedBackground'></div>
+
+	<div class='timeBarHolder'>
+		<div id='timeBarTop'></div>
+	</div>
+
+	<div id='timer' class='invisible'>
+		<svg width="250" height="250" viewbox="0 0 250 250">
+			<path id="border" transform="translate(125, 125)"/>
+			<path id="loader" transform="translate(125, 125) scale(.84)"/>
+		</svg>
+	</div>
+	
+	<div class='rateDiv' id='timeBoardDiv'>
+		<div class='rateLabel'>Time</div>
+		<div id='timeBoard'></div>
+		<div class='rateUnits'></div>
+	</div>
+
+	<div class='rateDiv' id='tenSecRateDiv'>
+		<div class='rateLabel'>10s Rate</div>
+		<div class='rateNum' id='tenSecRate'>0</div>
+		<div class='rateUnits'>wpm</div>
+	</div>
+
+	<div class='rateDiv invisible' id='avgRateDiv'>
+		<div class='rateLabel'>Avg Rate</div>
+		<div class='rateNum' id='avgRate'>0</div>
+		<div class='rateUnits'>wpm</div>
+	</div>
+
+	<div id='lyricsGoHere' class='container'>
+		<div id='backgroundImage'></div>
+		<div class='lyricLine invisible'></div>
+	</div>
+
+	<canvas class='invisible' id='graph'></canvas>
+	
+	<div id='finalReport' class='invisible'>
+		<div id='reportTitle'><span id='reportTitleTime'></span> Min Test Completed!</div>
+		<div id='finalGraphBackgroundDiv'>
+			<canvas id='finalGraph'></canvas>
+		</div>
+		<div id='tablesDiv'>
+			<table id='accuracyTable'>
+				<tr>
+					<td>Correct Keystrokes</td>
+					<td id='correctKeyStrokesDisplay'>x</td>
+				</tr>
+				<tr class='outlined'>
+					<td>Incorrect Keystrokes</td>
+					<td id='incorrectKeyStrokesDisplay'>x</td>
+				</tr>
+				<tr>
+					<td>Percent Accuracy</td>
+					<td id='percentAccuracyDisplay'>x%</td>
+				</tr>
+			</table>
+			<table id='ratesTable'>
+				<tr>
+					<td>Fastest 10s Interval</td>
+					<td id='tenSecRateDisplay'>x</td>
+				</tr>
+				<tr class='outlined'>
+					<td>Average Speed</td>
+					<td id='avgSpeedDisplay'>x</td>
+				</tr>
+				<tr>
+					<td>Global Ranking</td>
+					<td id='globalRankingDisplay'>x%</td>
+				</tr>
+			</table>
+		</div>
+		<button type="button" class="btn btn-success" id='replayButton' ><i class="fa fa-refresh"></i></button>
+		<button type="button" class="btn btn-success" id='goHomeButton' >
+			<svg id='goHomeSVG' viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+				<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg>
+		</button>
+	</div>
+
+	<div id='blackLoadingBackground'></div>
+	<span class="loader"><span class="loader-inner"></span></span>
+		   
+  </body>
+
+
+  <script src='/scripts/stringToDivs.js'></script>
+  <script src='/scripts/typeWriter.js'></script>
+  <script src='/scripts/speedStats.js'></script>
+  <script src='/scripts/randImage.js'></script>
+  <script src='/scripts/timers.js'></script>
+  <script src='/scripts/graphs.js'></script>
+  <script src='/scripts/finalReport.js'></script>
+  <script src='/scripts/localStorageUpdates.js'></script>
+  <script>
+
+	window.addEventListener('load',()=>{
+		document.getElementById('blackLoadingBackground').classList.add('invisible');
+		document.getElementsByClassName('loader')[0].classList.add('invisible');
+	})
+	
+	
+
+
+	document.getElementById('goHomeButton').addEventListener('click',()=>{
+		//uploads to localStorage most recent test score data
+		getAndUploadData();
+
+		//uploads to localStorage which test was taken (1/3/5/10 min) to automatically open progress graph on home page
+		var testDuration=document.getElementById('reportTitleTime').textContent;
+		localStorage.setItem('lastTest',testDuration);
+
+		//uploads last char  visited
+		saveLastCharIntoPageSaver();
+
+		//redirect home
+		window.location.href='/anotherHome';
+	})
+	document.getElementById('replayButton').addEventListener('click',()=>{
+		getAndUploadData();
+		saveLastCharIntoPageSaver();
+
+		//refresh page
+		location.reload();
+	})
+	
+	//loads the timers for all objects. Time is passed in inline onclick functions directly 
+	function prepTimers(time){
+		hideForefront();
+		typeWriter.addKeyFunctionality();
+		if (time==0)
+			time='NO';
+		typeWriter.testDuration=time;
+		speedStats.allottedTime=time;
+		timeDown.setAllotedTime(time);
+		finalReport.setTimer(time);
+
+		//sets the header time on the final report title
+		var timeTitle=document.getElementById('reportTitleTime');
+		switch(time){
+			case 60:
+				timeTitle.textContent='1';
+				break;
+			case 180:
+				timeTitle.textContent='3';
+				break;
+			case 300:
+				timeTitle.textContent='5';
+				break;
+			case 600:
+				timeTitle.textContent='10';
+				break;
+		}
+	}
+	
+	stringTextToDivs(<%- JSON.stringify(worksheet.body) %>);
+	typeWriter.unveilFirstLines();
+
+	//functions called when time runs out
+	function toggleFinalRep(){
+		document.getElementById('finalReport').classList.toggle('invisible');
+		document.getElementById('fadedBackground').classList.toggle('invisible');
+	}
+	function hideForefront(){
+		document.getElementById('timerBtnsDiv').style.display='none';
+		document.getElementById('fadedBackground').classList.add('invisible');
+	}
+	
+	
+	
+</script>
+
+</html>

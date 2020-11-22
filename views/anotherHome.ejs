@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesome Typewriter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet' href='/stylesheets/anotherHome.css'>
+</head>
+<body>
+    <div id='leftHalf'>
+        <div id='notepad'>
+            <div id='notepadContent'>
+                <div id='title'><span>A</span><span>WHOLESOME</span><span>LOATHSOME</span><span>TYPEWRITER</span></div>
+                <div id='descriptionsBox'> 
+                    <div id='descriptionOne' class='description'>&#8250;Improve your finger speed by typing along some of the most wholesome and loathsome texts ever composed, featuring Bob Ross video transcripts, Tonald Drump's interviews, Dr.Seuss' poetry, and Alex Jones' batshit insane rants.
+                    </div> 
+                    <div id='descriptionTwo' class='description'>&#8250;We use cookies to save your progress. We don't sell your data to Facebook or Amazon, not because of privacy ideals, but frankly because I don't know how to.
+                    </div>
+                </div>
+            </div>
+            <div id='scrollDown' class='blackDiv'>
+                &#10225;
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id='rightHalf'>
+        <div id='allContent'>
+            <div id='menuTab' class='tab' onclick='openMenu()'>MENU</div>
+            <div id='progressTab' class='tab' onclick='openProgress()'>YOUR PROGRESS</div>
+            <div id='menu'>
+                <div id='menuSection'>
+                    <div class='author'>Alex Jones</div>
+                    <div class='workpageOption'>
+                        <div class='workpageTitle'>On The Nature of Dreams</div>
+                        <div class='workpageProgressbar'><div class='innerBar' id='dreamsBar'></div></div>
+                        <div class='workpageProgressPercent' id='dreamsPercent'></div>
+
+                        <button type="button" class="btn btn-success continue" onclick='location.href="/workpage/alexJonesDreams"'>CONTINUE</button>
+                        <button type="button" class="btn btn-dark reset">RESET</button>
+
+                        <div class='confirm hidden'>U SURE?</div>
+                        <div class='no hidden'>NO</div>
+                        <div class='yes hidden black' id='resetDreams'>YES</div>
+                    </div>
+                
+                    <hr>
+
+                    <div class='author'>Bob Ross</div>
+                    <div class='workpageOption'>
+                        <div class='workpageTitle'>Shades of Gray</div>
+                        <div class='workpageProgressbar'><div class='innerBar' id='shadesBar'></div></div>
+                        <div class='workpageProgressPercent' id='shadesPercent'></div>
+
+                        <button type="button" class="btn btn-success continue" onclick='location.href="/workpage/shadesOfGray"'>CONTINUE</button>
+                        <button type="button" class="btn btn-dark reset">RESET</button>
+
+                        <div class='confirm hidden'>U SURE?</div>
+                        <div class='no hidden'>NO</div>
+                        <div class='yes hidden black' id='resetShades'>YES</div>
+                    </div>
+
+                    <hr>
+
+                    <div class='author'>Dr. Seuss</div>
+                    <div class='workpageOption'>
+                        <div class='workpageTitle'>Fox In Socks</div>
+                        <div class='workpageProgressbar'><div class='innerBar' id='foxBar'></div></div>
+                        <div class='workpageProgressPercent' id='foxPercent'></div>
+
+
+                        <button type="button" class="btn btn-success continue" onclick='location.href="/workpage/foxInSocks"'>CONTINUE</button>
+                        <button type="button" class="btn btn-dark reset">RESET</button>
+
+                        <div class='confirm hidden'>U SURE?</div>
+                        <div class='no hidden'>NO</div>
+                        <div class='yes hidden black' id='resetFox'>YES</div>
+                    </div>
+
+                    <hr>
+                    
+                    <div class='author'>Tonald Drump</div>
+                    <div class='workpageOption'>
+                        <div class='workpageTitle'>Axios Interview</div>
+                        <div class='workpageProgressbar'><div class='innerBar' id='axiosBar'></div></div>
+                        <div class='workpageProgressPercent' id='axiosPercent'></div>
+
+                        <button type="button" class="btn btn-success continue" onclick='location.href="/workpage/tonaldDrump"'>CONTINUE</button>
+                        <button type="button" class="btn btn-dark reset">RESET</button>
+
+                        <div class='confirm hidden'>U SURE?</div>
+                        <div class='no hidden'>NO</div>
+                        <div class='yes hidden black' id='resetAxios'>YES</div>
+                    </div>
+                </div>
+                <div id='progressSection' class='hidden'>
+                    <div id='buttonMenuBar'>
+                        <button type="button" class="btn btn-primary testBtn" id='oneMin'>1 Min</button>
+                        <button type="button" class="btn btn-primary testBtn" id='threeMin'>3 Min</button>
+                        <button type="button" class="btn btn-primary testBtn" id='fiveMin'>5 Min</button>
+                        <button type="button" class="btn btn-primary testBtn" id='tenMin'>10 Min</button>
+                    </div>
+                    <div id='canvasHolder'>
+                        <canvas id='progressChart'></canvas>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
+
+<script src='/scripts/progressChart.js'></script>
+<script src='/scripts/localStorageUpdates.js'></script>
+<script src='/scripts/homeButtons.js'></script>
+
+
+
+
+</html>

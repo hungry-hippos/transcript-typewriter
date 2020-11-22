@@ -1,0 +1,287 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Grenze+Gotisch&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='/stylesheets/sidebar.css'>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+    <div class='dropdown'>
+        <button class="dropbtn" onclick=showFonts()>Font</button>
+        <div class="dropdown-content" id='fonts'>
+            <div>
+                <label class="checkboxContainer" id='typewriter'>Typewriter
+                    <input type="checkbox" class='fontsCheckbox' id='typewriterBox' checked>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer" id='roboto'>Roboto
+                    <input type="checkbox" class='fontsCheckbox' id='robotoBox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer" id='gothic'>Grenze Gotisch
+                    <input type="checkbox" class='fontsCheckbox' id='gothicBox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer" id='montserrat'>Montserrat
+                    <input type="checkbox" class='fontsCheckbox' id='monstserratBox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer" id='grandstander'>Grandstander
+                    <input type="checkbox" class='fontsCheckbox' id='grandstanderBox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <a></a>
+
+    <div class='dropdown'>
+        <button class="dropbtn" onclick=showMonitors()>Speed Monitors</button>
+        <div class="dropdown-content" id='monitors'>
+            <div>
+                <label class="checkboxContainer">10s Rate
+                    <input type="checkbox" id='tenSecRateBox' checked>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer">Avg Rate
+                    <input type="checkbox" id='avgRateBox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer">Speed Monitor
+                    <input type="checkbox" id='monitorBox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <a></a>
+
+    <div class='dropdown'>
+        <button class="dropbtn" onclick=showTimers()>Timers</button>
+        <div class="dropdown-content" id='timers'>
+            <div>
+                <label class="checkboxContainer">Top Bar
+                    <input type="checkbox" id='topBarBox' checked>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer">Pie Clock
+                    <input type="checkbox" id='pieBox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="checkboxContainer">Countdown
+                    <input type="checkbox" id='countdownBox' checked>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <div class='dropbtn'>
+        <label class="checkboxContainer">Error Brake
+            <input type="checkbox" id='errorBrake'>
+            <span class="checkmark sideMenuCheckmark"></span>
+        </label>
+    </div>
+
+   
+</div>
+<div id='sidebarOpenBtn' onclick="openNav()">&#8249;<div id='openMenu'>PROPERTIES</div></div>
+
+
+
+<script>
+    /* toggles rate monitors */
+    document.getElementById('tenSecRateBox').addEventListener('click',()=>{
+        document.getElementById('tenSecRateDiv').classList.toggle('invisible');
+    })
+    document.getElementById('avgRateBox').addEventListener('click',()=>{
+        document.getElementById('avgRateDiv').classList.toggle('invisible');
+    })
+    document.getElementById('monitorBox').addEventListener('click',()=>{
+        document.getElementById('graph').classList.toggle('invisible');
+    })
+
+    /* controls which clocks are displayed */
+    document.getElementById('topBarBox').addEventListener('click',(event)=>{
+        var topBar=document.getElementById('timeBarTop');
+        topBar.classList.toggle('invisible');
+    })
+    document.getElementById('pieBox').addEventListener('click',(event)=>{
+        document.getElementById('timer').classList.toggle('invisible');
+        var countdownBox=document.getElementById('countdownBox');
+        if (countdownBox.checked==true){
+            countdownBox.click();
+        }
+    })
+    document.getElementById('countdownBox').addEventListener('click',(event)=>{
+        document.getElementById('timeBoardDiv').classList.toggle('invisible');
+        var pieBox=document.getElementById('pieBox');
+        if (pieBox.checked==true){
+            pieBox.click();
+        }
+    })
+
+    /* toggles error brake */
+    var brake=document.getElementById('errorBrake');
+    brake.addEventListener('click',()=>{
+        if (brake.checked==true){
+            typeWriter.errorBrake=true;
+        }else{
+            typeWriter.errorBrake=false;
+        }
+    })
+
+    /* Open/Close Sidebar */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        setTimeout(()=>{closeAllDropdowns('NULL')},500)
+    }
+
+    /* Open/Close Dropdown Menus on click */
+    function showTimers(){
+        closeAllDropdowns('timers');
+        document.getElementById('timers').classList.toggle('show');
+    }
+    function showMonitors(){
+        closeAllDropdowns('monitors');
+        document.getElementById('monitors').classList.toggle('show');
+    }
+    function showFonts(){
+        closeAllDropdowns('fonts');
+        document.getElementById('fonts').classList.toggle('show');
+    }
+    function showAI(){
+        closeAllDropdowns('AI');
+        document.getElementById('AI').classList.toggle('show');
+    }
+    function closeAllDropdowns(thisId){
+        var dropdowns=document.getElementsByClassName('dropdown-content');
+        for (var i=0;i<dropdowns.length;i++){
+            if (dropdowns[i].id==thisId)
+                continue;
+            dropdowns[i].classList.remove('show');
+        }
+    }
+
+    /* Only one font-style option is enabled and line-through height adjusts */
+    function adjustSpaceDivsHeight(num){
+        var correctSpace=document.getElementsByClassName('correctSpaceDiv');
+        var wrongSpace=document.getElementsByClassName('wrongSpaceDiv');
+        var spaceDiv=document.getElementsByClassName('spaceDiv');
+        
+        if (num==15){
+            for (var i=0;i<correctSpace.length;i++){
+                correctSpace[i].classList.remove('sixteen');
+                correctSpace[i].classList.remove('seventeen');
+            }
+            for (var i=0;i<wrongSpace.length;i++){
+                wrongSpace[i].classList.remove('sixteen');
+                wrongSpace[i].classList.remove('seventeen');
+            }
+            for (var i=0;i<spaceDiv.length;i++){
+                spaceDiv[i].classList.remove('sixteen');
+                spaceDiv[i].classList.remove('seventeen');
+            }
+        }
+        if (num==16){
+            for (var i=0;i<correctSpace.length;i++){
+                correctSpace[i].classList.add('sixteen');
+                correctSpace[i].classList.remove('seventeen');
+            }
+            for (var i=0;i<wrongSpace.length;i++){
+                wrongSpace[i].classList.add('sixteen');
+                wrongSpace[i].classList.remove('seventeen');
+            }
+            for (var i=0;i<spaceDiv.length;i++){
+                spaceDiv[i].classList.add('sixteen');
+                spaceDiv[i].classList.remove('seventeen');
+            }
+        }
+        if (num==17){
+            for (var i=0;i<correctSpace.length;i++){
+                correctSpace[i].classList.remove('sixteen');
+                correctSpace[i].classList.add('seventeen');
+            }
+            for (var i=0;i<wrongSpace.length;i++){
+                wrongSpace[i].classList.remove('sixteen');
+                wrongSpace[i].classList.add('seventeen');
+            }
+            for (var i=0;i<spaceDiv.length;i++){
+                spaceDiv[i].classList.remove('sixteen');
+                spaceDiv[i].classList.add('seventeen');
+            }
+        }
+    }
+    var fontsCheckboxes=document.getElementsByClassName('fontsCheckbox');
+    for (var i=0;i<fontsCheckboxes.length;i++){
+        fontsCheckboxes[i].addEventListener('click',(event)=>{
+            var boxes=document.getElementsByClassName('fontsCheckbox');
+            for (var i=0;i<boxes.length;i++){
+                boxes[i].checked=false;
+        }
+        event.target.checked=true;
+        if (document.getElementById('typewriterBox').checked==true){
+            document.getElementById('lyricsGoHere').style.fontFamily='Special Elite, cursive';
+            adjustSpaceDivsHeight(15);            
+        }
+        if (document.getElementById('robotoBox').checked==true){
+            document.getElementById('lyricsGoHere').style.fontFamily='Roboto, sans-serif';
+            adjustSpaceDivsHeight(17);
+        }
+        if (document.getElementById('gothicBox').checked==true){
+            document.getElementById('lyricsGoHere').style.fontFamily='Grenze Gotisch, cursive';
+            adjustSpaceDivsHeight(16);
+        }
+        if (document.getElementById('monstserratBox').checked==true){
+            document.getElementById('lyricsGoHere').style.fontFamily='Montserrat, sans-serif';
+            adjustSpaceDivsHeight(17);
+        }
+        if (document.getElementById('grandstanderBox').checked==true){
+            document.getElementById('lyricsGoHere').style.fontFamily='Grandstander, cursive';
+            adjustSpaceDivsHeight(16);
+        }
+        })
+    }
+    
+    /* Only 1 AI option is enabled */
+    var AIcheckboxes=document.getElementsByClassName('AIcheckbox');
+    for (var i=0;i<AIcheckboxes.length;i++){
+        AIcheckboxes[i].addEventListener('click',(event)=>{
+            var boxes=document.getElementsByClassName('AIcheckbox');
+            for (var i=0;i<boxes.length;i++){
+                boxes[i].checked=false;
+        }
+        event.target.checked=true;
+        })
+    }
+
+    
+
+    
+    
+
+
+
+
+</script>
