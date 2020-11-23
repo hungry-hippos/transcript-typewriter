@@ -7,13 +7,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 
 
-app.get('/home',function(req,res){
-	res.render('home.ejs');
-})
-app.get('/shiftingHome',function(req,res){
-	res.render('shiftingHome.ejs');
-})
-app.get('/anotherHome',function(req,res){
+app.get('/',function(req,res){
 	res.render('anotherHome.ejs');
 })
 
