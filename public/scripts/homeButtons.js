@@ -1,6 +1,7 @@
 
 //retrieves progress data from pageSaverDirectory in localStorage, fills up progress bars and percent fields
 
+
 const progressBarsAndPercentsInMenu=()=>{
     let pageSaverDirectoryString=localStorage.getItem('pageSaverDirectory');
     if (pageSaverDirectoryString==null){
@@ -26,6 +27,20 @@ const progressBarsAndPercentsInMenu=()=>{
         document.getElementById('shadesBar').style.width=progressShades;
         document.getElementById('foxBar').style.width=progressFox;
         document.getElementById('axiosBar').style.width=progressAxios;
+
+        const startBtns=document.getElementsByClassName('continue');
+        if (progressDreams!='0%'){
+            startBtns[0].textContent="CONTINUE";
+        }
+        if (progressShades!='0%'){
+            startBtns[1].textContent='CONTINUE';
+        }
+        if (progressFox!='0%'){
+            startBtns[2].textContent='CONTINUE';
+        }
+        if (progressAxios!='0%'){
+            startBtns[3].textContent='CONTINUE';
+        }
     }
 }
 
@@ -63,6 +78,19 @@ document.getElementById('resetAxios').addEventListener('click',(event)=>{resetPr
 const testResultsString=localStorage.getItem('testResults');
 const testResults=JSON.parse(testResultsString);
 
+if (testResults.oneMin.results.length!=0){
+    document.getElementById('oneMin').removeAttribute('disabled');
+}
+if (testResults.threeMin.results.length!=0){
+    document.getElementById('threeMin').removeAttribute('disabled');
+}
+if (testResults.fiveMin.results.length!=0){
+    document.getElementById('fiveMin').removeAttribute('disabled');
+}
+if (testResults.tenMin.results.length!=0){
+    document.getElementById('tenMin').removeAttribute('disabled');
+}
+
 document.getElementById('oneMin').addEventListener('click',()=>{
     createChart(testResults.oneMin.results,testResults.oneMin.dates,testResults.oneMin.title);
 })
@@ -79,7 +107,6 @@ document.getElementById('tenMin').addEventListener('click',()=>{
 
 
 /* shows reset confirmation and yes/no buttons */
-
 var resetbtns=document.getElementsByClassName('reset');
         for (var i=0;i<resetbtns.length;i++){
             resetbtns[i].addEventListener('click',(event)=>{
@@ -146,6 +173,17 @@ var resetbtns=document.getElementsByClassName('reset');
         document.getElementById('menuSection').classList.add('hidden');
         document.getElementById('progressSection').classList.remove('hidden');
         document.getElementById('menuTab').classList.remove('clickedTab');
+
+        //see if any btn is not disabled (meaning that data exists for that test), and generate chart of
+        //first non-disabled btn
+        const timeBtns=document.getElementsByClassName('testBtn');
+        for (var i=0;i<timeBtns.length;i++){
+            if (timeBtns[i].hasAttribute('disabled')){
+                continue;
+            }
+            timeBtns[i].click();
+            break;
+        }
     }
 
     

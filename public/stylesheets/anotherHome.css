@@ -16,11 +16,12 @@ background-position: -200px -10px;
 
 #notepad{position:relative;
 top:20%;
-width:246px;
-height:375px;
+width:300px;
+height:450px;
+box-sizing: border-box;
 display:block;
 margin:auto;
-background:#f1c051;
+background: #f1d379;
 overflow: hidden;
 font-family: 'Special Elite', cursive;
 border-radius:10px;
@@ -29,17 +30,16 @@ box-shadow:0 0 8px #000000;
 
 /* Used to hide side-scrolling bat */
 #notepadContent{
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+position: relative;
 overflow-y: scroll;
 scroll-behavior: smooth;
-
+height:400px;
+width:400px;
+padding-bottom:50px;
 }
 
-#title{margin:50px 5px 110px 5px;
+#title{margin:50px 5px 60px 5px;
+width:285px;
 font-size:39px;
 padding-top:2px;
 background-image: linear-gradient(180deg, rgb(128, 117, 117) 3%, #f9f9b0 3%, #f9f9b0 50%, rgb(128, 117, 117) 50%, rgb(128, 117, 117) 52.38%, #f9f9b0 52.38%,  #f9f9b0 100%);
@@ -73,23 +73,23 @@ margin-bottom:20px;
 padding:0 5px;
 font-weight: bold;
 }
-#descriptionTwo{margin-bottom: 80px;
-position: relative;
-top:-3px;
-line-height: 15px;}
+#descriptionTwo{position: relative;
+top:0px;}
 #descriptionOne{position: relative;
-top:2px;
-line-height: 15px;
-margin-bottom:50px;}
+top:7px;
+margin-bottom:30px;}
 
-#descriptionsBox{background-image: linear-gradient(180deg, #000000 2.38%, #f9f9b0 2.38%, #f9f9b0 50%, #000000 50%, #000000 52.38%, #f9f9b0 52.38%,  #f9f9b0 100%);
-background-size: 30px 30px;
+ #descriptionsBox{background: linear-gradient( to bottom, #f9f9b0, #f9f9b0 50%, #edd2935e 50%, #edd2935e);
+background-size: 100% 22px;
 border:1px solid rgb(128, 117, 117);
-width:98%;
-height:281px;
+padding:10px 5px;
+line-height:1.3;
+width:290px;
+height:360px;
+border-radius:5px;
 position:static;
-margin-left:1px;
-border-radius:5px}
+margin-left:4px;
+}
 
 
 /* everything up to this point was only left half. Everyone from now on is right half*/
@@ -99,7 +99,8 @@ top: 0;
 right: 0;
 width: 70%;
 height: 100%;
-background: #f7d486;
+background: rgb(219,197,118);
+background: linear-gradient(90deg, rgba(219,197,118,1) 29%, rgba(252,176,69,1) 74%);
 font-family: 'Montserrat', sans-serif;
 }
 

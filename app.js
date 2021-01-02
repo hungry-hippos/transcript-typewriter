@@ -41,9 +41,6 @@ app.get('/workpage/:id', function(req,res){
 })
 
 
-
-
-
 app.listen(99,function(req,res){
 	console.log('Listen');
 })
