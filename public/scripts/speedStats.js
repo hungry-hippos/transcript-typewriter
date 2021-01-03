@@ -35,10 +35,7 @@ var speedStats={
             var wordsTyped=typeWriter.wordCounter-speedStats.lastWordCounter5Sec;
             var speed=wordsTyped*12;
             speedStats.lastWordCounter5Sec=typeWriter.wordCounter;
-            speedStats.fiveSecSpeeds.push(speed);
-                        
-            //creates new chart
-            graphFiveSec.createChart();
+            speedStats.fiveSecSpeeds.push(speed);        
         },5000);
         speedStats.intervalCodes.push(code);
 
@@ -51,7 +48,7 @@ var speedStats={
         for (var i=0;i<3;i++){
             clearInterval(speedStats.intervalCodes[i]);
         }
-        console.log(speedStats.allottedTime+' Times UP');
+        graphFiveSec.createChart();
     },
     getElapsedTime(){
         var deltaT=(Date.now()-speedStats.startTime)/1000;

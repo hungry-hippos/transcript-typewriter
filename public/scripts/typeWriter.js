@@ -120,7 +120,6 @@ var typeWriter={
                     clock.static();
                 }else{ 
                     timeBar.start(typeWriter.testDuration);
-                    clock.start(typeWriter.testDuration);
                     timeDown.start();
                     finalReport.startTimer();
                 }

@@ -35,31 +35,8 @@ var graphFiveSec={
         }
     },
     createChart(){
-        var myChart=document.getElementById('graph').getContext('2d');
-        var fiveSecChart= new Chart(myChart,{
-            type:'line',
-            data:{
-                labels:graphFiveSec.collectionTimes,
-                datasets:[
-                    {
-                        label:'Set 1',
-                        data: graphFiveSec.speeds,
-                        borderColor:'#c71616',
-                        fill:false
-                    }
-                ]
-            },
-            options: {
-                responsive: false,
-                animation: { duration: 0 },
-                legend: {display:false},
-                scales:{
-                    yAxes:[{display:false}],
-                    xAxes:[{display:false}]
-                }
-            }
-        })
-
+        console.log(graphFiveSec.speeds);
+        console.log(graphFiveSec.collectionTimes);
         var myFinalChart=document.getElementById('finalGraph').getContext('2d');
         var finalChart= new Chart(myFinalChart,{
             type:'line',

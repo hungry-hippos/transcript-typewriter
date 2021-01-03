@@ -1,5 +1,5 @@
 
-#timerBtnsDiv{width:45%;
+#timerBtnsDiv{width:570px;
     height:150px;
     background:#363230;
     font-family:'Avenir';
@@ -28,10 +28,10 @@
     
     #headerIcon{padding:0}
     i{margin:0}
-    #buttons{width:85%;
+    #buttons{width:95%;
     height:50%;
     margin-top:2%;
-    padding-left:10px;
+    padding-left:30px;
     padding-top:10px;}
     
     .btn{background: rgb(171, 163, 206);
@@ -45,11 +45,11 @@
     background-color: rgb(236,139,78);
     box-shadow:0 0 0 0.2rem rgb(243, 122, 46) }
 
-    #fadedBackground{position:absolute;
+    #fadedBackground{position:fixed;
         top:0;
         left:0;
-        height:110%;
-        width:100%;
+        bottom:0;
+        right:0;
         z-index:1;
         background:black;
         opacity:.8}

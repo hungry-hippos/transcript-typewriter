@@ -185,12 +185,8 @@
 
   #sidebarOpenBtn{position:absolute;
     cursor: pointer;
-    bottom:0;
+    top:300px;
     left:10px;
     color:white;
-    font-size: 100px;}
-  #openMenu{font-size: 20px;
-    position: absolute;
-    top: 48%;
-    left: 35px;}
+    font-size: 50px;}
 

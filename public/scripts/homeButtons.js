@@ -31,15 +31,19 @@ const progressBarsAndPercentsInMenu=()=>{
         const startBtns=document.getElementsByClassName('continue');
         if (progressDreams!='0%'){
             startBtns[0].textContent="CONTINUE";
+            startBtns[0].nextElementSibling.classList.remove('hidden');
         }
         if (progressShades!='0%'){
             startBtns[1].textContent='CONTINUE';
+            startBtns[1].nextElementSibling.classList.remove('hidden');
         }
         if (progressFox!='0%'){
             startBtns[2].textContent='CONTINUE';
+            startBtns[2].nextElementSibling.classList.remove('hidden');
         }
         if (progressAxios!='0%'){
             startBtns[3].textContent='CONTINUE';
+            startBtns[3].nextElementSibling.classList.remove('hidden');
         }
     }
 }
@@ -60,10 +64,14 @@ const resetProgress=(title)=>{
 }
 
 const hideReset=(event)=>{
-    event.target.previousElementSibling.previousElementSibling.previousElementSibling.classList.remove('hidden');
+    event.target.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('hidden');
     event.target.previousElementSibling.previousElementSibling.classList.add('hidden');
     event.target.previousElementSibling.classList.add('hidden');
-    event.target.classList.add('hidden');   
+    event.target.classList.add('hidden');
+
+    event.target.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent="START";
+    
+    
 }
 
 document.getElementById('resetDreams').addEventListener('click',(event)=>{resetProgress('alexJonesDreams');hideReset(event)});

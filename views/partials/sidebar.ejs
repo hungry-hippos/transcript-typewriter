@@ -59,12 +59,6 @@
                     <span class="checkmark"></span>
                 </label>
             </div>
-            <div>
-                <label class="checkboxContainer">Speed Monitor
-                    <input type="checkbox" id='monitorBox'>
-                    <span class="checkmark"></span>
-                </label>
-            </div>
         </div>
     </div>
 
@@ -80,14 +74,8 @@
                 </label>
             </div>
             <div>
-                <label class="checkboxContainer">Pie Clock
-                    <input type="checkbox" id='pieBox'>
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-            <div>
                 <label class="checkboxContainer">Countdown
-                    <input type="checkbox" id='countdownBox' checked>
+                    <input type="checkbox" id='countdownBox' >
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -103,7 +91,7 @@
 
    
 </div>
-<div id='sidebarOpenBtn' onclick="openNav()">&#8249;<div id='openMenu'>PROPERTIES</div></div>
+<div id='sidebarOpenBtn' onmouseover="openNav()">&#8249;&#8249;&#8249;</div>
 
 
 
@@ -115,28 +103,14 @@
     document.getElementById('avgRateBox').addEventListener('click',()=>{
         document.getElementById('avgRateDiv').classList.toggle('invisible');
     })
-    document.getElementById('monitorBox').addEventListener('click',()=>{
-        document.getElementById('graph').classList.toggle('invisible');
-    })
 
     /* controls which clocks are displayed */
     document.getElementById('topBarBox').addEventListener('click',(event)=>{
         var topBar=document.getElementById('timeBarTop');
         topBar.classList.toggle('invisible');
     })
-    document.getElementById('pieBox').addEventListener('click',(event)=>{
-        document.getElementById('timer').classList.toggle('invisible');
-        var countdownBox=document.getElementById('countdownBox');
-        if (countdownBox.checked==true){
-            countdownBox.click();
-        }
-    })
     document.getElementById('countdownBox').addEventListener('click',(event)=>{
         document.getElementById('timeBoardDiv').classList.toggle('invisible');
-        var pieBox=document.getElementById('pieBox');
-        if (pieBox.checked==true){
-            pieBox.click();
-        }
     })
 
     /* toggles error brake */
@@ -170,10 +144,6 @@
     function showFonts(){
         closeAllDropdowns('fonts');
         document.getElementById('fonts').classList.toggle('show');
-    }
-    function showAI(){
-        closeAllDropdowns('AI');
-        document.getElementById('AI').classList.toggle('show');
     }
     function closeAllDropdowns(thisId){
         var dropdowns=document.getElementsByClassName('dropdown-content');
@@ -263,25 +233,5 @@
         }
         })
     }
-    
-    /* Only 1 AI option is enabled */
-    var AIcheckboxes=document.getElementsByClassName('AIcheckbox');
-    for (var i=0;i<AIcheckboxes.length;i++){
-        AIcheckboxes[i].addEventListener('click',(event)=>{
-            var boxes=document.getElementsByClassName('AIcheckbox');
-            for (var i=0;i<boxes.length;i++){
-                boxes[i].checked=false;
-        }
-        event.target.checked=true;
-        })
-    }
-
-    
-
-    
-    
-
-
-
 
 </script>

@@ -15,13 +15,13 @@ background-position: -200px -10px;
     background:#ffffff33}
 
 #notepad{position:relative;
-top:20%;
+top:70px;
 width:300px;
 height:450px;
 box-sizing: border-box;
 display:block;
 margin:auto;
-background: #f1d379;
+background: #f1af52;
 overflow: hidden;
 font-family: 'Special Elite', cursive;
 border-radius:10px;
@@ -79,7 +79,7 @@ top:0px;}
 top:7px;
 margin-bottom:30px;}
 
- #descriptionsBox{background: linear-gradient( to bottom, #f9f9b0, #f9f9b0 50%, #edd2935e 50%, #edd2935e);
+ #descriptionsBox{background: linear-gradient( to bottom, #f9f9b0, #f9f9b0 50%, #f1d379 50%, #f1d379);
 background-size: 100% 22px;
 border:1px solid rgb(128, 117, 117);
 padding:10px 5px;
@@ -106,7 +106,7 @@ font-family: 'Montserrat', sans-serif;
 
 
 #allContent{position:absolute;
-top:18%;
+top:85px;
 left:5%;
 height: 70%;
 width: 90%;

@@ -22,36 +22,6 @@ var timeBar={
 }
 timeBar.static();
 
-var clock={
-    draw(time,α,static) {
-        var loader = document.getElementById('loader')
-        var border = document.getElementById('border')
-        var π = Math.PI;
-        if (static==false)
-            α--;
-        α %= 360;
-        var r = ( α * π / 180 )
-        var x = Math.sin( r ) * 100
-        var y = Math.cos( r ) * - 100
-        var mid = ( α > 180 ) ? 1 : 0
-        var anim = 'M 0 0 v -100 A 100 100 1 ' 
-                + mid + ' 1 ' 
-                +  x  + ' ' 
-                +  y  + ' z';
-        
-        loader.setAttribute( 'd', anim );
-        border.setAttribute( 'd', anim );
-        if (static==false && α!=0)
-            setTimeout(()=>{clock.draw(time,α,false)}, time*2.78);
-    },
-    static(){
-        clock.draw(2,359.9,true);
-    },
-    start(time){
-        clock.draw(time,360,false);
-    }
-};
-clock.static();
 
 //the code that sets the initial content is in the button event listeners in workpage.ejs
 var timeDown={

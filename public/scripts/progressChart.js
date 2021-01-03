@@ -2,7 +2,6 @@
 
 var myChart=document.getElementById('progressChart').getContext('2d');
 
-
 Chart.defaults.global.title.fontFamily="Palatino Linotype";
 const createChart=(dataArray,datesArray,chartTitle)=>{
     finalChart= new Chart(myChart,{

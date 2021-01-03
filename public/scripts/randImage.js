@@ -9,143 +9,143 @@ const backgroundImages={
         },
         {
             url:'url(../images/DrSeuss/foxBlackAndWhite.jpg)',
-            size:'100% 100%',
+            size:'105% 100%',
             pos:'0 0'
         },
         {
             url:'url(../images/DrSeuss/foxClocks.png)',
-            size:'70% 110%',
+            size:'75% 110%',
             pos:'140% 20%'
         },
         {
             url:'url(../images/DrSeuss/foxJumps.jpeg)',
-            size:'100% 100%',
+            size:'105% 100%',
             pos:'0 0'
         },
         {
             url:'url(../images/DrSeuss/sue.png)',
-            size:'70% 140%',
+            size:'75% 140%',
             pos:'400px 0%'
         },
         {
             url:'url(../images/DrSeuss/niceFox.jpg)',
-            size:'100% 100%',
+            size:'105% 100%',
             pos:'0 0'
         },
         {
             url:'url(../images/DrSeuss/coolFox.jpg)',
-            size:'100% 120%',
+            size:'105% 120%',
             pos:'0% -60px'
         },
         {
             url:'url(../images/DrSeuss/knox.png)',
-            size:'110% 150%',
+            size:'115% 150%',
             pos:'0 -50px'
         }
     ],
     alexJonesDreams:[
         {
             url:'url(../images/AlexJones/suit.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/AlexJones/pointing.jpg_fit=scale)',
-            size:'130% 100%',
+            size:'130% 110%',
             pos:'-100px 0',
         },
         {
             url:'url(../images/AlexJones/idk.jpg)',
-            size:'130% 100%',
+            size:'130% 110%',
             pos:'-130px 0',
         },
         {
             url:'url(../images/AlexJones/gayFrog69.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0px 0',
         },
         {
             url:'url(../images/AlexJones/moreGayFrogs.jpg)',
-            size:'100% 160%',
+            size:'100% 170%',
             pos:'0 -200px',
         },
         {
             url:'url(../images/AlexJones/tinFoil.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/AlexJones/flexing.jpg)',
-            size:'140% 100%',
+            size:'140% 110%',
             pos:'-150px 0',
         },
         {
             url: 'url(../images/AlexJones/fire.jpg)',
-            size: '100% 140%',
+            size: '100% 150%',
             pos: '0 -70px'
         }
     ],
     shadesOfGray:[
         {
             url:'url(../images/bobRoss/happy.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/bobRoss/chill.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/bobRoss/gangsta.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/bobRoss/posing.jpg)',
-            size:'110% 120%',
-            pos:'0 0',
+            size:'100% 180%',
+            pos:'0 -100px',
         },
         {
             url:'url(../images/bobRoss/young.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         }
     ],
     tonaldDrump:[
         {
             url:'url(../images/trump/attentive.jpg)',
-            size:'110% 100%',
+            size:'110% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/trump/charts.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/trump/confusion.jpg)',
-            size:'110% 100%',
+            size:'110% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/trump/graphs.jpg)',
-            size:'100% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/trump/profile.jpg)',
-            size:'140% 100%',
+            size:'140% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/trump/tongue.jpg)',
-            size:'120% 100%',
+            size:'100% 110%',
             pos:'0 0',
         },
         {
             url:'url(../images/trump/what.jpg)',
-            size:'120% 100%',
+            size:'120% 110%',
             pos:'0 0',
         }
     ],

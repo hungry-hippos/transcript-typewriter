@@ -107,7 +107,7 @@ function stringTextToDivs(stringText){
 
         if (id=='foxInSocks'){
             for (var j=0;j<lines.length;j++){
-                lines[j].style.marginTop='25px';
+                lines[j].style.marginTop='15px';
             }
             document.getElementById('lyricsGoHere').style.padding='20px';
         }
