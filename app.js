@@ -40,7 +40,8 @@ app.get('/workpage/:id', function(req,res){
 	
 })
 
-
-app.listen(99,function(req,res){
-	console.log('Listen');
-})
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
