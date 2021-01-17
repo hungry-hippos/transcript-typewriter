@@ -87,27 +87,27 @@ const backgroundImages={
     ],
     shadesOfGray:[
         {
-            url:'url(../images/bobRoss/happy.jpg)',
+            url:'url(../images/BobRoss/happy.jpg)',
             size:'100% 110%',
             pos:'0 0',
         },
         {
-            url:'url(../images/bobRoss/chill.jpg)',
+            url:'url(../images/BobRoss/chill.jpg)',
             size:'100% 110%',
             pos:'0 0',
         },
         {
-            url:'url(../images/bobRoss/gangsta.jpg)',
+            url:'url(../images/BobRoss/gangsta.jpg)',
             size:'100% 110%',
             pos:'0 0',
         },
         {
-            url:'url(../images/bobRoss/posing.jpg)',
+            url:'url(../images/BobRoss/posing.jpg)',
             size:'100% 180%',
             pos:'0 -100px',
         },
         {
-            url:'url(../images/bobRoss/young.jpg)',
+            url:'url(../images/BobRoss/young.jpg)',
             size:'100% 110%',
             pos:'0 0',
         }
