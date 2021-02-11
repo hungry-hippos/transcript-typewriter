@@ -83,21 +83,25 @@ document.getElementById('resetAxios').addEventListener('click',(event)=>{resetPr
 
 
 //retrives testResults from local storage, passes data into progress charts
+
 const testResultsString=localStorage.getItem('testResults');
 const testResults=JSON.parse(testResultsString);
+if (testResults){
+    if (testResults.oneMin.results.length!=0){
+        document.getElementById('oneMin').removeAttribute('disabled');
+    }
+    if (testResults.threeMin.results.length!=0){
+        document.getElementById('threeMin').removeAttribute('disabled');
+    }
+    if (testResults.fiveMin.results.length!=0){
+        document.getElementById('fiveMin').removeAttribute('disabled');
+    }
+    if (testResults.tenMin.results.length!=0){
+        document.getElementById('tenMin').removeAttribute('disabled');
+    }
+}
 
-if (testResults.oneMin.results.length!=0){
-    document.getElementById('oneMin').removeAttribute('disabled');
-}
-if (testResults.threeMin.results.length!=0){
-    document.getElementById('threeMin').removeAttribute('disabled');
-}
-if (testResults.fiveMin.results.length!=0){
-    document.getElementById('fiveMin').removeAttribute('disabled');
-}
-if (testResults.tenMin.results.length!=0){
-    document.getElementById('tenMin').removeAttribute('disabled');
-}
+
 
 document.getElementById('oneMin').addEventListener('click',()=>{
     createChart(testResults.oneMin.results,testResults.oneMin.dates,testResults.oneMin.title);

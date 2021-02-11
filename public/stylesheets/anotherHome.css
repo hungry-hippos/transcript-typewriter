@@ -145,7 +145,8 @@ border-radius: 10px;
 background: #daeae5;
 box-shadow: 0 0 3px #7cb5aa;
 }
-.author{font-weight:bold}
+.author{font-weight:bold;
+}
 .workpageOption{width:100%;
 display:flex;
 margin-top:5px;
