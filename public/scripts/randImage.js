@@ -75,11 +75,6 @@ const backgroundImages={
             pos:'0 0',
         },
         {
-            url:'url(../images/AlexJones/flexing.jpg)',
-            size:'140% 110%',
-            pos:'-150px 0',
-        },
-        {
             url: 'url(../images/AlexJones/fire.jpg)',
             size: '100% 150%',
             pos: '0 -70px'

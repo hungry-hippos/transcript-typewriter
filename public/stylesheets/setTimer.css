@@ -28,11 +28,12 @@
     
     #headerIcon{padding:0}
     i{margin:0}
-    #buttons{width:95%;
-    height:50%;
+    #buttons{width:100%;
     margin-top:2%;
-    padding-left:30px;
-    padding-top:10px;}
+    padding-top:10px;
+    display:flex;
+    justify-content: space-evenly;
+}
     
     .btn{background: rgb(171, 163, 206);
     border-color: rgb(177, 163, 206);

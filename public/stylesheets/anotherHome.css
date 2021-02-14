@@ -103,10 +103,16 @@ background: rgb(219,197,118);
 background: linear-gradient(90deg, rgba(219,197,118,1) 29%, rgba(252,176,69,1) 74%);
 font-family: 'Montserrat', sans-serif;
 }
+#welcomeDescription{display:block;
+width:80%;
+margin: 30px auto;
+text-align: center;
+font-size:25px;
+}
 
 
 #allContent{position:absolute;
-top:85px;
+top:130px;
 left:5%;
 height: 70%;
 width: 90%;
