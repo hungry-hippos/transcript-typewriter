@@ -98,6 +98,7 @@ var typeWriter={
         this.allChars[this.i].classList.add('currentChar');
         
         document.addEventListener('keydown',function(e){
+            document.getElementById('startTypingMessage').classList.add('invisible');
             if(e.key=='Shift'){
             }else if (e.key=='Backspace' && typeWriter.i>=0){
                 typeWriter.backspaceInput();

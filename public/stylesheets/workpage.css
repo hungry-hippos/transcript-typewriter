@@ -1,4 +1,15 @@
-
+#startTypingMessage{
+  font-family: 'Montserrat';
+  font-size: 40px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+  background-color: #ff00005e;
+  color: black;
+}
 
 body{background:black}
 
