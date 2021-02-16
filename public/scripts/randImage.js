@@ -50,24 +50,9 @@ const backgroundImages={
             pos:'0 0',
         },
         {
-            url:'url(../images/AlexJones/pointing.jpg_fit=scale)',
-            size:'130% 110%',
-            pos:'-100px 0',
-        },
-        {
             url:'url(../images/AlexJones/idk.jpg)',
             size:'130% 110%',
             pos:'-130px 0',
-        },
-        {
-            url:'url(../images/AlexJones/gayFrog69.jpg)',
-            size:'100% 110%',
-            pos:'0px 0',
-        },
-        {
-            url:'url(../images/AlexJones/moreGayFrogs.jpg)',
-            size:'100% 170%',
-            pos:'0 -200px',
         },
         {
             url:'url(../images/AlexJones/tinFoil.jpg)',
@@ -75,9 +60,9 @@ const backgroundImages={
             pos:'0 0',
         },
         {
-            url: 'url(../images/AlexJones/fire.jpg)',
-            size: '100% 150%',
-            pos: '0 -70px'
+            url: 'url(../images/AlexJones/joeRogan.PNG)',
+            size: '100% 110%',
+            pos: '0 0'
         }
     ],
     shadesOfGray:[
